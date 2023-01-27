@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import YouTube from 'react-youtube';
-import { BsSun, BsMoonFill } from 'react-icons/bs'
+import { BsSun, BsMoonFill, BsGithub } from 'react-icons/bs'
 
 const playerVars = { autoplay: 1 }
 
@@ -23,12 +23,20 @@ function App() {
   return (
     <div className={!lightMode ? "from-slate-800 to-sky-700 " + commonClasses : " from-sky-200 to-emerald-200 " + commonClasses}>
 
-      <h1 className={!lightMode ? 'text-center text-8xl my-2 text-slate-100 font-mono font-bold text-shadowed uppercase' : 'text-center text-8xl my-2 text-amber-500 font-mono font-bold text-shadowed uppercase'}>Introducing Me</h1>
+      <h1 className={!lightMode ? 'text-center text-2xl lg:text-8xl my-2 text-slate-100 font-mono font-bold text-shadowed uppercase' : 'text-center text-8xl my-2 text-amber-500 font-mono font-bold text-shadowed uppercase'}>Introducing Me</h1>
 
-      <YouTube videoId="VVRskhA2rug" opts={opts} className={!lightMode ? "mx-auto lg:block border-4 rounded-lg hover:opacity-90 border-sky-200" : "mx-auto lg:block border-4 rounded-lg hover:opacity-90 border-orange-400"} />
+      <YouTube videoId="urcNYJp_BBU" opts={opts} className={!lightMode ? "mx-auto lg:block border-4 rounded-lg hover:opacity-90 border-sky-200 " : "mx-auto lg:block border-4 rounded-lg hover:opacity-90 border-orange-400"} />
+
       {!lightMode && <BsSun className='absolute top-5 right-5 h-10 w-10 text-white hover:cursor-pointer hover:text-yellow-500 transition duration-200' onClick={handleClick} />}
       {lightMode && <BsMoonFill className='absolute top-5 right-5 h-10 w-10 text-green hover:cursor-pointer hover:text-indigo-500 transition duration-200 ' onClick={handleClick} />}
 
+      <a href="https://github.com/Barjaktarevic" target='_blank'>
+        {!lightMode && <BsGithub className='absolute top-5 left-5 h-10 w-10 text-white hover:cursor-pointer hover:text-yellow-500 transition duration-200' />}
+      </a>
+
+      <a href="https://github.com/Barjaktarevic" target='_blank'>
+        {lightMode && <BsGithub className='absolute top-5 left-5 h-10 w-10 text-green hover:cursor-pointer hover:text-indigo-500 transition duration-200 ' />}
+      </a>
     </div>
   )
 }
